@@ -1,10 +1,25 @@
-# ide
+# idea
 /.idea/
 *.iml
 
-
 # backend
-/backend/.mvn/
-/backend/mvnw
 /backend/mvnw.cmd
+/backend/mvnw
+/backend/.mvn/
 /backend/target/
+
+# frontend
+/frontend/logs
+/frontend/*.log
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/pnpm-debug.log*
+/frontend/lerna-debug.log*
+/frontend/node_modules
+/frontend/dist
+/frontend/dist-ssr
+/frontend/*.local
+
+# other
+.DS_Store
