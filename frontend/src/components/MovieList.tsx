@@ -1,14 +1,9 @@
 import axios from "axios";
-import React, { useEffect } from "react";
-import { Movie } from "../lib/types.tsx";
-
-interface MovieListProps {
-    movies: Movie[] | null;
-    setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
-}
+import {MovieListProps} from "../lib/types.tsx";
+import {useEffect} from "react";
 
 export default function MovieList({ movies, setMovies }: MovieListProps) {
-    useEffect(() => {
+    useEffect(():void => {
         if (movies === null) {
             axios.get('/api/movies')
                 .then(response => {
@@ -18,7 +13,7 @@ export default function MovieList({ movies, setMovies }: MovieListProps) {
                     console.log(error);
                 });
         }
-    }, [movies, setMovies]); // Include movies and setMovies as dependencies
+    }, [movies, setMovies]);
 
     return (
         <>
@@ -35,5 +30,3 @@ export default function MovieList({ movies, setMovies }: MovieListProps) {
         </>
     );
 }
-
-
