@@ -1,6 +1,6 @@
-import React, { ChangeEvent, useState } from "react";
 import axios from "axios";
 import { MovieListProps } from "../lib/types.tsx";
+import {ChangeEvent, FormEvent, useState} from "react";
 
 export default function AddMovie({ movies, setMovies }: MovieListProps) {
     const [userInputTitle, setUserInputTitle] = useState<string>('');
@@ -14,7 +14,7 @@ export default function AddMovie({ movies, setMovies }: MovieListProps) {
         setUserInputAuthor(event.target.value);
     };
 
-    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>):void => {
+    const handleFormSubmit = (event: FormEvent<HTMLFormElement>):void => {
         event.preventDefault();
         axios.post('/api/movies', {
             title: userInputTitle,
@@ -33,8 +33,26 @@ export default function AddMovie({ movies, setMovies }: MovieListProps) {
     return (
         <>
             <form onSubmit={handleFormSubmit}>
-                <input type="text" placeholder="Title" value={userInputTitle} onChange={changeInputTitle} />
-                <input type="text" placeholder="Author" value={userInputAuthor} onChange={changeInputAuthor} />
+                <div>
+                    <label htmlFor="titleInput">Title:</label>
+                    <input
+                        type="text"
+                        id="titleInput"
+                        placeholder="Enter the title"
+                        value={userInputTitle}
+                        onChange={changeInputTitle}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="authorInput">Author:</label>
+                    <input
+                        type="text"
+                        id="authorInput"
+                        placeholder="Enter the author"
+                        value={userInputAuthor}
+                        onChange={changeInputAuthor}
+                    />
+                </div>
                 <button type="submit">Add</button>
             </form>
         </>
