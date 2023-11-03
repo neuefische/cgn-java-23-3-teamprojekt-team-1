@@ -1,6 +1,7 @@
 import axios from "axios";
 import {ChangeEvent, useEffect, useState} from "react";
 import {Movie} from "./lib/types.tsx";
+import MovieList from "./components/MovieList.tsx";
 
 
 
@@ -58,17 +59,7 @@ export default  function App ():JSX.Element {
                 <input type="text" placeholder="Author" value={userInputAuthor} onChange={changeInputAuthor} />
                 <button type="submit">Add</button>
             </form>
-            {!movies ? <strong>movies are loading</strong> : (
-
-                <ul>
-                    {movies.map(movie => (
-                        <li key={movie.id}>
-                            <h3>Title: {movie.title}</h3>
-                            <p>Author: {movie.author}</p>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            <MovieList movies={movies} setMovies={setMovies}/>
         </>
     );
 }
