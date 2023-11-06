@@ -1,20 +1,6 @@
-import axios from "axios";
 import {MovieListProps} from "../lib/types.tsx";
-import {useEffect} from "react";
 
-export default function MovieList({ movies, setMovies }: MovieListProps) {
-    useEffect(():void => {
-        if (movies === null) {
-            axios.get('/api/movies')
-                .then(response => {
-                    setMovies(response.data);
-                })
-                .catch(error => {
-                    console.log(error);
-                });
-        }
-    }, [movies, setMovies]);
-
+export default function MovieList({ movies }: MovieListProps) {
     return (
         <>
             {!movies ? <strong>movies are loading</strong> : (

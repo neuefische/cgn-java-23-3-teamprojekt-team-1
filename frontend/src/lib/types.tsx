@@ -1,12 +1,13 @@
-import React from "react";
-
 export type Movie = {
     id: string,
-    title:string,
-    author:string
+    title: string,
+    author: string
 }
 
-export interface MovieListProps {
+export type AddMovieProps = {
+    onAddNewMovie: (newMovie: Movie) => void;
+};
+
+export type MovieListProps = {
     movies: Movie[];
-    setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
-}
+};

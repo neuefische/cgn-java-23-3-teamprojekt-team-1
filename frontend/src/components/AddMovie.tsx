@@ -1,8 +1,8 @@
 import axios from "axios";
-import { MovieListProps } from "../lib/types.tsx";
+import {AddMovieProps} from "../lib/types.tsx";
 import {ChangeEvent, FormEvent, useState} from "react";
 
-export default function AddMovie({ movies, setMovies }: MovieListProps) {
+export default function AddMovie({ onAddNewMovie }: AddMovieProps) {
     const [userInputTitle, setUserInputTitle] = useState<string>('');
     const [userInputAuthor, setUserInputAuthor] = useState<string>('');
 
@@ -21,7 +21,7 @@ export default function AddMovie({ movies, setMovies }: MovieListProps) {
             author: userInputAuthor
         })
             .then(response => {
-                setMovies([...movies, response.data]);
+                onAddNewMovie(response.data);
                 setUserInputTitle('');
                 setUserInputAuthor('');
             })
