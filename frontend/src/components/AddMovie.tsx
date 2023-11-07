@@ -35,7 +35,7 @@ export default function AddMovie({ onAddNewMovie }: AddMovieProps) {
         <CenteredContainer>
             <Form onSubmit={handleFormSubmit}>
                 <div>
-                    <Label htmlFor="titleInput">Title:</Label>
+                    <Label htmlFor="titleInput">Title</Label>
                     <Input
                         type="text"
                         id="titleInput"
@@ -45,7 +45,7 @@ export default function AddMovie({ onAddNewMovie }: AddMovieProps) {
                     />
                 </div>
                 <div>
-                    <Label htmlFor="authorInput">Author:</Label>
+                    <Label htmlFor="authorInput">Author</Label>
                     <Input
                         type="text"
                         id="authorInput"
@@ -73,8 +73,8 @@ const Form = styled.form`
 `;
 
 const Button = styled.button`
-  width: 200px;
-  height: 50px;
+  width: 20em;
+  height: 4em;
   margin-top: 10px;
   padding: 1em;
   background-color: #D73832;
@@ -102,9 +102,9 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  width: 200px;
-  height: 36px;
-  padding: 8px;
+  width: 20em;
+  height: 1em;
+  padding: 1em;
   font-size: 16px;
   font-weight: 500;
   border: 1px solid #D73832;
