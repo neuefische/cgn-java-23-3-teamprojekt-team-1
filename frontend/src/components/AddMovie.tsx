@@ -63,7 +63,7 @@ export default function AddMovie({ onAddNewMovie }: AddMovieProps) {
 const CenteredContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 20px 0; /* Adjust vertical margin as needed */
+  margin: 20px 0;
 `;
 
 const Form = styled.form`
@@ -75,7 +75,7 @@ const Form = styled.form`
 const Button = styled.button`
   width: 200px;
   height: 50px;
-  margin: 0;
+  margin-top: 10px;
   padding: 1em;
   background-color: #D73832;
   color: #ffffff;
@@ -87,8 +87,7 @@ const Button = styled.button`
   text-align: center;
   transition: background-color 0.3s ease-in-out;
   border-bottom: 1px solid #dddddd;
-  margin-top: 10px;
-
+  
   &:hover {
     background-color: #9F2A24;
   }
