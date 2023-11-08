@@ -31,7 +31,7 @@ export default function App(): JSX.Element {
     return (
         <>
             <AddMovie onAddNewMovie={addNewMovie}/>
-            <MovieList movies={movies} onDeleteMovie={deleteMovie}/>
+            <MovieList movies={movies} handleDeleteMovie={deleteMovie}/>
         </>
     );
 }

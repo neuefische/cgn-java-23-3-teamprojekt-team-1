@@ -3,6 +3,7 @@ package org.example.backend;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -42,6 +43,18 @@ class MovieServiceTest {
         // THEN
         verify(movieRepository).save(any(Movie.class));
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void deleteMovieById_whenExecuted_thenDeleteMovieObjectWithGivenId() {
+        // GIVEN
+        doNothing().when(movieRepository).deleteById(anyString());
+        movieRepository.deleteById("15432-3215");
+        //THEN
+        verify(movieRepository, times(1)).deleteById("15432-3215");
+        //Optional<Object> expected = Optional.empty();
+        //assertEquals(expected, movieRepository.getMovieById("1"));
+        //funktion fehlt noch
     }
 }
 
