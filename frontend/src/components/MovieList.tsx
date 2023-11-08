@@ -28,7 +28,7 @@ const MovieListContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 30em;
 `;
 
 const Emoji = styled.span`
