@@ -10,10 +10,10 @@ export default function App(): JSX.Element {
     useEffect(():void => {
             axios.get('/api/movies')
                 .then(response => {
-                    setMovies(response.data);
+                    setMovies(response.data as Movie[]);
                 })
                 .catch(error => {
-                    console.log(error);
+                    console.error(error);
                 });
 
     }, []);
@@ -22,10 +22,16 @@ export default function App(): JSX.Element {
         setMovies([...movies, newMovie])
     }
 
+    function deleteMovie(movieId: string) {
+        setMovies((currentMovies) =>
+            currentMovies.filter((movie) => movie.id !== movieId)
+        );
+    }
+
     return (
         <>
             <AddMovie onAddNewMovie={addNewMovie}/>
-            <MovieList movies={movies} />
+            <MovieList movies={movies} onDeleteMovie={deleteMovie}/>
         </>
     );
 }
