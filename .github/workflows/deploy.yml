@@ -40,7 +40,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '21' #muss mit der Version in der pom.xml übereinstimmen
+          java-version: '17'
           distribution: 'temurin'
           cache: 'maven'
 
@@ -50,7 +50,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: app.jar
-          path: backend/target/app.jar # Muss mit dem finalName in der pom.xml übereinstimmen.
+          path: backend/target/app.jar
 
   push-to-docker-hub:
     runs-on: ubuntu-latest
