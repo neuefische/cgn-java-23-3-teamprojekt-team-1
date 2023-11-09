@@ -1,7 +1,8 @@
-import {MovieListProps} from "../lib/types.tsx";
+import { MovieListProps } from "../lib/types.tsx";
+import DeleteMovie from './DeleteMovie.tsx';
 import styled from "styled-components";
 
-export default function MovieList({movies}: MovieListProps) {
+export default function MovieList({movies, handleDeleteMovie}: MovieListProps) {
     return (
         <MovieListContainer>
             <>
@@ -13,6 +14,7 @@ export default function MovieList({movies}: MovieListProps) {
                                 <H3> Title: {movie.title}</H3>
                                 <Emoji>📝</Emoji>
                                 <P>Author: {movie.author}</P>
+                                <DeleteMovie movieId={movie.id} onDeleteMovie={handleDeleteMovie}/>
                             </LI>
                         ))}
                     </ul>

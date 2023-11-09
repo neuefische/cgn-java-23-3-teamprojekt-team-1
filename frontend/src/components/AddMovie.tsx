@@ -86,7 +86,6 @@ const Button = styled.button`
   font-weight: 500;
   text-align: center;
   transition: background-color 0.3s ease-in-out;
-  border-bottom: 1px solid #dddddd;
   
   &:hover {
     background-color: #9F2A24;

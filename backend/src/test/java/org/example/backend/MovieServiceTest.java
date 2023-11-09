@@ -43,5 +43,14 @@ class MovieServiceTest {
         verify(movieRepository).save(any(Movie.class));
         assertEquals(expected, actual);
     }
+
+    @Test
+    void deleteMovieById_whenExecuted_thenDeleteMovieObjectWithGivenId() {
+        // GIVEN
+        doNothing().when(movieRepository).deleteById(anyString());
+        movieRepository.deleteById("15432-3215");
+        //THEN
+        verify(movieRepository, times(1)).deleteById("15432-3215");
+    }
 }
 
