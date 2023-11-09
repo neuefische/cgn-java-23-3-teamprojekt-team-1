@@ -63,7 +63,6 @@ export default function AddMovie({ onAddNewMovie }: AddMovieProps) {
 const CenteredContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 20px 0;
 `;
 
 const Form = styled.form`

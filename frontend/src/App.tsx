@@ -3,6 +3,7 @@ import {Movie} from "./lib/types.tsx";
 import MovieList from "./components/MovieList.tsx";
 import AddMovie from "./components/AddMovie.tsx";
 import axios from "axios";
+import styled from "styled-components";
 
 export default function App(): JSX.Element {
     const [movies, setMovies] = useState<Movie[]>([]);
@@ -30,8 +31,16 @@ export default function App(): JSX.Element {
 
     return (
         <>
+            <Section>
             <AddMovie onAddNewMovie={addNewMovie}/>
             <MovieList movies={movies} handleDeleteMovie={deleteMovie}/>
+            </Section>
         </>
     );
 }
+
+const Section = styled.section `
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+`
