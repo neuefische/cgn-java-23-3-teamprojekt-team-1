@@ -100,6 +100,28 @@ class MovieControllerTest {
 
     @Test
     @DirtiesContext
+    void getMovieById_ReturnObjectWithGivenIdAsJson() throws Exception {
+        Movie movie = new Movie("15432-3215", "Waschen Film", "Someone");
+        String movieAsJson = objectMapper.writeValueAsString(movie);
+
+        MvcResult result = mockMvc.perform(post(BASE_URI)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(movieAsJson)
+                )
+                .andExpect(status().isOk())
+                .andReturn();
+
+        Movie savedMovie = objectMapper.readValue(result.getResponse().getContentAsString(), Movie.class);
+        String savedMovieAsJson = objectMapper.writeValueAsString(savedMovie);
+
+        mockMvc.perform(get(BASE_URI + "/" + savedMovie.id()))
+                .andExpect(status().isOk())
+                .andExpect(content().json(savedMovieAsJson));
+
+    }
+
+    @Test
+    @DirtiesContext
     void deleteMovieById() throws Exception {
         Movie movie = new Movie(null, "mag Pflanzen", "Luna die Katze");
         String movieAsJson = objectMapper.writeValueAsString(movie);
