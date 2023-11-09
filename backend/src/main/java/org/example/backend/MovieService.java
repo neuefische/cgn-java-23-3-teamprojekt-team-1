@@ -1,5 +1,7 @@
 package org.example.backend;
+
 import java.util.List;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,10 @@ public class MovieService {
 
     public Movie addMovie(Movie movie) {
         return movieRepository.save(movie);
+    }
+
+    public Movie getMovieById(String id) {
+        return movieRepository.findById(id).orElseThrow(() -> new RuntimeException("Movie not found"));
     }
 
     public void delete(String id) {

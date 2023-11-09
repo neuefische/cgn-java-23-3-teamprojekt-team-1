@@ -1,6 +1,8 @@
 package org.example.backend;
+
 import lombok.*;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -17,6 +19,11 @@ public class MovieController {
     @PostMapping
     public Movie addMovie(@RequestBody Movie movie) {
         return movieService.addMovie(movie);
+    }
+
+    @GetMapping("{id}")
+    public Movie getMovieById(@PathVariable String id) {
+       return movieService.getMovieById(id);
     }
 
     @DeleteMapping("{id}")
