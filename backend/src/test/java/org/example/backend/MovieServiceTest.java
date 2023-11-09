@@ -1,6 +1,8 @@
 package org.example.backend;
 import org.junit.jupiter.api.Test;
 import java.util.List;
+import java.util.Optional;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,6 +39,18 @@ class MovieServiceTest {
         Movie actual = movieService.addMovie(movie);
         // THEN
         verify(movieRepository).save(any(Movie.class));
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void getMovieById_returnAMovieObjectWithTheGivenId() {
+        // GIVEN
+        Movie expected = new Movie("15432-3215", "Waschen Film", "Someone");
+        // WHEN
+        when(movieRepository.findById(expected.id())).thenReturn(Optional.of(expected));
+        Movie actual = movieService.getMovieById(expected.id());
+        // THEN
+        verify(movieRepository).findById(expected.id());
         assertEquals(expected, actual);
     }
 
