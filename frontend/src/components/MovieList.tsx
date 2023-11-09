@@ -7,7 +7,7 @@ export default function MovieList({movies, handleDeleteMovie}: MovieListProps) {
         <MovieListContainer>
             <>
                 {!movies ? <strong>movies are loading</strong> : (
-                    <ul>
+                    <UL>
                         {movies.map(movie => (
                             <LI key={movie.id}>
                                 <Emoji>🎬</Emoji>
@@ -17,7 +17,7 @@ export default function MovieList({movies, handleDeleteMovie}: MovieListProps) {
                                 <DeleteMovie movieId={movie.id} onDeleteMovie={handleDeleteMovie}/>
                             </LI>
                         ))}
-                    </ul>
+                    </UL>
                 )}
             </>
         </MovieListContainer>
@@ -30,13 +30,18 @@ const MovieListContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 30em;
+  height: auto;
 `;
 
 const Emoji = styled.span`
   align-self: center;
   font-size: 24px;
 `;
+
+const UL = styled.ul`
+    list-style-type: none;
+    padding: 0;
+`
 
 const LI = styled.li`
   background-color: #222;
@@ -50,6 +55,7 @@ const LI = styled.li`
   grid-template-columns: auto 1fr;
   grid-row-gap: 2px;
   grid-column-gap: 10px;
+  
 `;
 
 const H3 = styled.h3`
