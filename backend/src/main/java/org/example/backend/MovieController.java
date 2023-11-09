@@ -20,10 +20,7 @@ public class MovieController {
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable String id) {
+    public void deleteMovieById(@PathVariable String id) {
         movieService.delete(id);
     }
 }
-
-
-
