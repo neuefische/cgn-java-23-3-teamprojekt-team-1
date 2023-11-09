@@ -17,7 +17,13 @@ public class MovieController {
     @PostMapping
     public Movie addMovie(@RequestBody Movie movie) {
         return movieService.addMovie(movie);
-    }}
+    }
+
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable String id) {
+        movieService.delete(id);
+    }
+}
 
 
 
