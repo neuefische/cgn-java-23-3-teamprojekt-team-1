@@ -28,7 +28,7 @@ jobs:
 
   build-backend:
     runs-on: ubuntu-latest
-    needs: build-frontend
+    needs: build-frontend.yml
     steps:
       - uses: actions/checkout@v3
 
