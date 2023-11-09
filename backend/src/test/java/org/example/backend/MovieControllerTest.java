@@ -1,5 +1,4 @@
 package org.example.backend;
-
 import org.junit.jupiter.api.Test;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,5 +96,24 @@ class MovieControllerTest {
         Movie actual = objectMapper.readValue(result.getResponse().getContentAsString(), Movie.class);
         // THEN
         assertEquals(expected, actual);
+    }
+
+    @Test
+    @DirtiesContext
+    void deleteMovieById() throws Exception {
+        Movie movie = new Movie(null, "mag Pflanzen", "Luna die Katze");
+        String movieAsJson = objectMapper.writeValueAsString(movie);
+
+        MvcResult result = mockMvc.perform(post(BASE_URI)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(movieAsJson)
+                )
+                .andExpect(status().isOk())
+                .andReturn();
+
+        Movie savedMovie = objectMapper.readValue(result.getResponse().getContentAsString(), Movie.class);
+
+        mockMvc.perform(delete(BASE_URI + "/" + savedMovie.id()))
+                .andExpect(status().isOk());
     }
 }
