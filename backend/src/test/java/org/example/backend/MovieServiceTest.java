@@ -52,9 +52,6 @@ class MovieServiceTest {
         movieRepository.deleteById("15432-3215");
         //THEN
         verify(movieRepository, times(1)).deleteById("15432-3215");
-        //Optional<Object> expected = Optional.empty();
-        //assertEquals(expected, movieRepository.getMovieById("1"));
-        //funktion fehlt noch
     }
 }
 
