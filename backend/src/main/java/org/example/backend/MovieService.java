@@ -22,7 +22,7 @@ public class MovieService {
         return movieRepository.findById(id).orElseThrow(() -> new RuntimeException("Movie not found"));
     }
 
-    public void delete(String id) {
+    public void deleteMovie(String id) {
         movieRepository.deleteById(id);
     }
 }
