@@ -2,22 +2,22 @@ import { MovieListProps } from "../lib/types.tsx";
 import DeleteMovie from './DeleteMovie.tsx';
 import styled from "styled-components";
 
-export default function MovieList({movies, handleDeleteMovie}: MovieListProps) {
+export default function MovieList({movies, handleDeleteMovie}: Readonly<MovieListProps>) {
     return (
         <MovieListContainer>
             <>
                 {!movies ? <strong>movies are loading</strong> : (
-                    <UL>
+                    <MovieListSection>
                         {movies.map(movie => (
-                            <LI key={movie.id}>
+                            <MovieListItem key={movie.id}>
                                 <Emoji>🎬</Emoji>
                                 <H3> Title: {movie.title}</H3>
                                 <Emoji>📝</Emoji>
                                 <P>Author: {movie.author}</P>
                                 <DeleteMovie movieId={movie.id} onDeleteMovie={handleDeleteMovie}/>
-                            </LI>
+                            </MovieListItem>
                         ))}
-                    </UL>
+                    </MovieListSection>
                 )}
             </>
         </MovieListContainer>
@@ -38,12 +38,12 @@ const Emoji = styled.span`
   font-size: 24px;
 `;
 
-const UL = styled.ul`
+const MovieListSection = styled.ul`
     list-style-type: none;
     padding: 0;
 `
 
-const LI = styled.li`
+const MovieListItem = styled.li`
   background-color: #222;
   border: 1px solid #ddd;
   border-radius: 10px;
