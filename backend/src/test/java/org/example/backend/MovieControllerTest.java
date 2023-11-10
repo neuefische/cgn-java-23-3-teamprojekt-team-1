@@ -138,4 +138,37 @@ class MovieControllerTest {
         mockMvc.perform(delete(BASE_URI + "/" + savedMovie.id()))
                 .andExpect(status().isOk());
     }
+    @Test
+    @DirtiesContext
+    void updateMovieById_ExpectUpdatedMovieReturned() throws Exception {
+        // GIVEN
+        Movie movie = new Movie(null, "Regenwurm", "Regen Wurm");
+        String movieAsJson = objectMapper.writeValueAsString(movie);
+
+        MvcResult createResult = mockMvc.perform(post(BASE_URI)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(movieAsJson)
+                )
+                .andExpect(status().isOk())
+                .andReturn();
+
+        Movie createdMovie = objectMapper.readValue(createResult.getResponse().getContentAsString(), Movie.class);
+        Movie updatedMovie = new Movie(createdMovie.id(), "Styling Helden", "Fabi & Domi");
+
+        String updatedMovieAsJson = objectMapper.writeValueAsString(updatedMovie);
+
+        // WHEN
+        MvcResult updateResult = mockMvc.perform(put(BASE_URI + "/" + createdMovie.id())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(updatedMovieAsJson)
+                )
+                .andExpect(status().isOk())
+                .andReturn();
+
+        Movie returnedUpdatedMovie = objectMapper.readValue(updateResult.getResponse().getContentAsString(), Movie.class);
+
+        // THEN
+        assertEquals("Styling Helden", returnedUpdatedMovie.title());
+        assertEquals("Fabi & Domi", returnedUpdatedMovie.author());
+    }
 }
