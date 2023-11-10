@@ -7,7 +7,7 @@ Our Movie/Film Management App is the perfect solution to organize your personal 
 Visit our app in action on [Render](https://app-5yds.onrender.com)!
 
 ## Technologies
-- **Frontend**: TypeScript
+- **Frontend**: React with Typescript
 - **Backend**: Java
 - **Infrastructure**: Docker, Deployed on [Render.com](https://render.com)
 
