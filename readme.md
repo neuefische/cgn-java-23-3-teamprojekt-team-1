@@ -15,9 +15,3 @@ Visit our app in action on [Render](https://app-5yds.onrender.com)!
 - [Alex](https://github.com/Hirnstromwelle)
 - [Dominic](https://github.com/makitango)
 - [Fabian](https://github.com/FabianMariusLink)
-
-## Getting Started
-
-Run `mvn dependency:resolve` to resolve dependencies with Maven.
-Install all npm dependencies with `npm install`.
-To run the app in development mode, use `npm run dev`, then open http://localhost:3000 to view it in the browser.
