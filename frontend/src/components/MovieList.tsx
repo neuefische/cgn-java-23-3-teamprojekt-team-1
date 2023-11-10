@@ -8,6 +8,7 @@ export default function MovieList({movies, onDeleteMovie}: Readonly<MovieListPro
             <>
                 {!movies ? <strong>movies are loading</strong> : (
                     <MovieListSection>
+                        <H2>Movie List</H2>
                         {movies.map(movie => (
                             <MovieListItem key={movie.id}>
                                 <Emoji>🎬</Emoji>
@@ -61,6 +62,14 @@ const H3 = styled.h3`
   color: white;
   font-family: "Arial", "Helvetica", sans-serif;
   font-weight: bold;
+`;
+
+const H2 = styled.h2`
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #D73832;
+  text-align: center;
 `;
 
 const P = styled.p`

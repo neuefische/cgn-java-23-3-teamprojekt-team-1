@@ -40,14 +40,17 @@ export default function App(): JSX.Element {
                 <AddMovie onAddNewMovie={handleAddNewMovie} />
                 <FindMovie onFindMovie={handleFindMovie} />
                 {foundMovie && (
-                    <div>
-                        <h2>Found Movie:</h2>
-                        <p>Title: {foundMovie.title}</p>
-                        <p>Author: {foundMovie.author}</p>
-                    </div>
+                    <MovieSearchContainer>
+                        <H2>Found Movie</H2>
+                    <MovieSearchItem>
+                        <Emoji>🎬</Emoji>
+                        <P>Title: {foundMovie.title}</P>
+                        <Emoji>📝</Emoji>
+                        <P>Author: {foundMovie.author}</P>
+                    </MovieSearchItem>
+                    </MovieSearchContainer>
                 )}
                 <MovieList movies={movies} onDeleteMovie={handleDeleteMovie} />
-
             </Section>
         </>
     );
@@ -57,4 +60,44 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   margin: 1em;
+`;
+
+const MovieSearchContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+`;
+
+const Emoji = styled.span`
+  align-self: center;
+  font-size: 24px;
+`;
+
+const MovieSearchItem = styled.li`
+  background-color: #222;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  list-style: none;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto 1fr;
+  grid-row-gap: 2px;
+  grid-column-gap: 10px;
+  
+`;
+
+const H2 = styled.h2`
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #D73832;
+`;
+
+const P = styled.p`
+  color: white;
+  font-family: "Arial", "Helvetica", sans-serif;
 `;
