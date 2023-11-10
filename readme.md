@@ -8,7 +8,7 @@ Visit our app in action on [Render](https://app-5yds.onrender.com)!
 
 ## Technologies
 - **Frontend**: React with Typescript
-- **Backend**: Java
+- **Backend**: Java Spring & MongoDB
 - **Infrastructure**: Docker, Deployed on [Render.com](https://render.com)
 
 ## Team Members
