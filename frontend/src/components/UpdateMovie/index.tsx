@@ -19,8 +19,8 @@ export default function UpdateMovie({ movie, onUpdateMovie }: UpdateMovieProps):
 
     return (
         <div>
-            <h2>Update Movie</h2>
-            <label>
+            <h3>Update Movie</h3>
+            <label className="update-label">
                 Title:
                 <input
                     type="text"
@@ -28,7 +28,7 @@ export default function UpdateMovie({ movie, onUpdateMovie }: UpdateMovieProps):
                     onChange={(e) => setUpdatedTitle(e.target.value)}
                 />
             </label>
-            <label>
+            <label className="update-label">
                 Author:
                 <input
                     type="text"

@@ -58,3 +58,12 @@ h2 {
 .update-button:hover {
     background-color: #9f2a24;
 }
+
+.update-label {
+font-size: medium;
+}
+
+.update-label input {
+    font-size: medium;
+
+}
