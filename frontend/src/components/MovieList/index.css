@@ -1,0 +1,38 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+section {
+    list-style-type: none;
+    padding: 0;
+}
+
+li h3 {
+    color: white;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+li span {
+    align-self: center;
+    font-size: 24px;
+}
+
+li p {
+    color: white;
+    font-family: "Arial", "Helvetica", sans-serif;
+    margin: 0;
+}
+
+h2 {
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #d73832;
+    text-align: center;
+}
