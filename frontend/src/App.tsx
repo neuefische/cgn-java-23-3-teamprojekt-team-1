@@ -30,9 +30,9 @@ export default function App(): JSX.Element {
         );
     }
 
-    const handleFindMovie = (foundMovie: Movie) => {
+    function handleFindMovie(foundMovie: Movie)  {
         setFoundMovie(foundMovie);
-    };
+    }
 
     return (
         <>
