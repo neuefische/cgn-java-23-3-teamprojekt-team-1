@@ -11,6 +11,8 @@ export type AddMovieProps = {
 export type MovieListProps = {
     movies: Movie[];
     onDeleteMovie: (movieId: string) => void;
+    onUpdateMovie: (updatedMovie: Movie) => void;
+
 };
 
 export type DeleteMovieProps = {
@@ -21,3 +23,8 @@ export type DeleteMovieProps = {
 export type FindMovieByIdProps = {
     onFindMovie: (foundMovie: Movie) => void;
 };
+
+export type UpdateMovieProps = {
+    movie: Movie;
+    onUpdateMovie: (updatedMovie: Movie) => void;
+}

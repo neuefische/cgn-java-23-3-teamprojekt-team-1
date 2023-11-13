@@ -33,7 +33,7 @@ public class MovieController {
         movieService.deleteMovie(id);
     }
 
-    @PutMapping(path = {"{id}/update", "{id}"})
+    @PutMapping(path = {"{id}"})
     Movie updateMovieID(@PathVariable String id, @RequestBody Movie movie) {
         if (!movie.id().equals(id)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The id in the url does not match the request body's id");

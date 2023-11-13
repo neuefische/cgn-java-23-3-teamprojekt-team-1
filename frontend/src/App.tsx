@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Movie } from "./resources/types.tsx";
+import {useEffect, useState} from "react";
+import {Movie} from "./resources/types.tsx";
 import MovieList from "./components/MovieList";
 import AddMovie from "./components/AddMovie";
 import FindMovie from "./components/FindMovie";
@@ -36,11 +36,26 @@ export default function App(): JSX.Element {
         setFoundMovie(foundMovie);
     }
 
+    function handleUpdateMovie(updatedMovie: Movie) {
+        axios
+            .put(`/api/movies/${updatedMovie.id}`, updatedMovie)
+            .then(() => {
+                setMovies((currentMovies) =>
+                    currentMovies.map((movie) =>
+                        movie.id === updatedMovie.id ? updatedMovie : movie
+                    )
+                );
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
     return (
         <>
             <section>
-                <AddMovie onAddNewMovie={handleAddNewMovie} />
-                <FindMovie onFindMovie={handleFindMovie} />
+                <AddMovie onAddNewMovie={handleAddNewMovie}/>
+                <FindMovie onFindMovie={handleFindMovie}/>
                 {foundMovie && (
                     <div>
                         <h2>Found Movie</h2>
@@ -53,7 +68,7 @@ export default function App(): JSX.Element {
                     </div>
                 )}
 
-                <MovieList movies={movies} onDeleteMovie={handleDeleteMovie} />
+                <MovieList movies={movies} onDeleteMovie={handleDeleteMovie} onUpdateMovie={handleUpdateMovie}/>
             </section>
         </>
     );
