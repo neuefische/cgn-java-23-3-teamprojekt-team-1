@@ -10,10 +10,14 @@ export type AddMovieProps = {
 
 export type MovieListProps = {
     movies: Movie[];
-    handleDeleteMovie: (movieId: string) => void;
+    onDeleteMovie: (movieId: string) => void;
 };
 
 export type DeleteMovieProps = {
     movieId: string;
     onDeleteMovie: (movieId: string) => void;
+};
+
+export type FindMovieByIdProps = {
+    onFindMovie: (foundMovie: Movie) => void;
 };
