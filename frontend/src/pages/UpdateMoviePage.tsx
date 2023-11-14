@@ -1,17 +1,14 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import UpdateMovie from '../components/UpdateMovie';
-import { Movie } from '../resources/types';
+import {Movie} from '../resources/types';
 import axios from 'axios';
 
 export default function UpdateMoviePage
-    (): JSX.Element {
-    
+(): JSX.Element {
 
 
-
-
-    const { id } = useParams<{ id: string }>();
+    const {id} = useParams<{ id: string }>();
 
     const [movie, setMovie] = React.useState<Movie | null>(null);
 
@@ -40,12 +37,12 @@ export default function UpdateMoviePage
     return (
         <div>
             {movie ? (
-                <UpdateMovie movie={movie} onUpdateMovie={handleUpdateMovie} />
+                <UpdateMovie movie={movie} onUpdateMovie={handleUpdateMovie}/>
             ) : (
                 <p>Loading...</p>
             )}
         </div>
     );
-};
+}
 
 
