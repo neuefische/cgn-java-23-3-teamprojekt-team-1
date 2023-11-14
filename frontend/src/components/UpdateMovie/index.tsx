@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {Movie, UpdateMovieProps} from "../../resources/types.tsx";
-import "../../resources/global.css";
+// import "../../resources/global.css";
 import "./index.css";
 
 
@@ -19,18 +19,18 @@ export default function UpdateMovie({ movie, onUpdateMovie }: UpdateMovieProps):
 
     return (
         <div className="update-form">
-            <h3>Update Movie</h3>
-            <label className="update-label">
-                Title:
-                <input className="update-input"
+            {/*<h3>Update Movie</h3>*/}
+            <label>
+                Edit Title:
+                <input
                     type="text"
                     value={updatedTitle}
                     onChange={(e) => setUpdatedTitle(e.target.value)}
                 />
             </label>
-            <label className="update-label">
-                Author:
-                <input className="update-input"
+            <label>
+                Edit Author:
+                <input
                     type="text"
                     value={updatedAuthor}
                     onChange={(e) => setUpdatedAuthor(e.target.value)}

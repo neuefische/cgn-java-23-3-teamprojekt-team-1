@@ -21,17 +21,25 @@
 }
 
 .update-form{
-    padding-top: 4em;
+    /*padding-top: 4em;*/
     width: 16em;
     font-size: 13px;
+
 }
 
-.update-label {
+.update-form h4{
+    color: white;
+    font-size: 1.17em;
+    text-align: left;
+}
+
+.update-form label{
     display: block;
     margin-bottom: 1em;
+    color: white;
+    font-size: 1.17em;
 }
 
-.update-input {
+.update-form input{
     width: 100%;
 }
-

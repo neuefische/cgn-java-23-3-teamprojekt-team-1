@@ -18,8 +18,14 @@ li h3 {
     margin: 0;
 }
 
-li span {
+/*li span {
     align-self: center;
+    font-size: 24px;
+}*/
+
+li span {
+    display: inline-block; /* Damit width und text-align funktionieren */
+    text-align: center;
     font-size: 24px;
 }
 
