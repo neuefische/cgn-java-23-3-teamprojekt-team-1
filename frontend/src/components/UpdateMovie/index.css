@@ -19,3 +19,19 @@
 .update-button:hover {
     background-color: #9f2a24;
 }
+
+.update-form{
+    padding-top: 4em;
+    width: 16em;
+    font-size: 13px;
+}
+
+.update-label {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.update-input {
+    width: 100%;
+}
+

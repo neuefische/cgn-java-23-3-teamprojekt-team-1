@@ -18,11 +18,11 @@ export default function UpdateMovie({ movie, onUpdateMovie }: UpdateMovieProps):
     };
 
     return (
-        <div>
+        <div className="update-form">
             <h3>Update Movie</h3>
             <label className="update-label">
                 Title:
-                <input
+                <input className="update-input"
                     type="text"
                     value={updatedTitle}
                     onChange={(e) => setUpdatedTitle(e.target.value)}
@@ -30,7 +30,7 @@ export default function UpdateMovie({ movie, onUpdateMovie }: UpdateMovieProps):
             </label>
             <label className="update-label">
                 Author:
-                <input
+                <input className="update-input"
                     type="text"
                     value={updatedAuthor}
                     onChange={(e) => setUpdatedAuthor(e.target.value)}
