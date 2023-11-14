@@ -1,7 +1,8 @@
 import axios from "axios";
-import { AddMovieProps } from "../lib/types.tsx";
+import { AddMovieProps } from "../../resources/types.tsx";
 import { ChangeEvent, FormEvent, useState } from "react";
-import styled from "styled-components";
+import "../../resources/global.css";
+import "./index.css";
 
 export default function AddMovie({ onAddNewMovie }: AddMovieProps) {
     const [userInputTitle, setUserInputTitle] = useState<string>('');
@@ -32,11 +33,11 @@ export default function AddMovie({ onAddNewMovie }: AddMovieProps) {
     };
 
     return (
-        <CenteredContainer>
-            <Form onSubmit={handleFormSubmit}>
+        <div>
+            <form onSubmit={handleFormSubmit}>
                 <div>
-                    <Label htmlFor="titleInput">Title</Label>
-                    <Input
+                    <label htmlFor="titleInput">Title</label>
+                    <input
                         type="text"
                         id="titleInput"
                         placeholder="Enter the title"
@@ -45,8 +46,8 @@ export default function AddMovie({ onAddNewMovie }: AddMovieProps) {
                     />
                 </div>
                 <div>
-                    <Label htmlFor="authorInput">Author</Label>
-                    <Input
+                    <label htmlFor="authorInput">Author</label>
+                    <input
                         type="text"
                         id="authorInput"
                         placeholder="Enter the author"
@@ -54,64 +55,8 @@ export default function AddMovie({ onAddNewMovie }: AddMovieProps) {
                         onChange={changeInputAuthor}
                     />
                 </div>
-                <Button type="submit">Add</Button>
-            </Form>
-        </CenteredContainer>
+                <button type="submit">Add</button>
+            </form>
+        </div>
     );
 }
-
-const CenteredContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Button = styled.button`
-  width: 20em;
-  height: 4em;
-  margin-top: 10px;
-  padding: 1em;
-  background-color: #D73832;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
-  transition: background-color 0.3s ease-in-out;
-  
-  &:hover {
-    background-color: #9F2A24;
-  }
-`;
-
-const Label = styled.label`
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  font-weight: 500;
-  color: #D73832;
-`;
-
-const Input = styled.input`
-  width: 20em;
-  height: 1em;
-  padding: 1em;
-  font-size: 16px;
-  font-weight: 500;
-  border: 1px solid #D73832;
-  border-radius: 8px;
-  margin-top: 4px;
-  box-sizing: border-box;
-  outline: none;
-
-  &:focus {
-    border-color: #D73832;
-  }
-`;

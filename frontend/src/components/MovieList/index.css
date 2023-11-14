@@ -1,0 +1,69 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+section {
+    list-style-type: none;
+    padding: 0;
+}
+
+li h3 {
+    color: white;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+li span {
+    align-self: center;
+    font-size: 24px;
+}
+
+li p {
+    color: white;
+    font-family: "Arial", "Helvetica", sans-serif;
+    margin: 0;
+}
+
+h2 {
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #d73832;
+    text-align: center;
+}
+
+.update-button {
+    width: 6em;
+    height: 2em;
+    margin-top: 10px;
+    padding: 0;
+    background-color: #d73832;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.update-button:hover {
+    background-color: #9f2a24;
+}
+
+.update-label {
+font-size: medium;
+}
+
+.update-label input {
+    font-size: medium;
+
+}

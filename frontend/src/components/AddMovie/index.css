@@ -1,0 +1,56 @@
+
+.centeredContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    width: 20em;
+    height: 4em;
+    margin-top: 10px;
+    padding: 1em;
+    background-color: #D73832;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #9F2A24;
+}
+
+.label {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #D73832;
+}
+
+.input {
+    width: 20em;
+    height: 1em;
+    padding: 1em;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #D73832;
+    border-radius: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #D73832;
+}

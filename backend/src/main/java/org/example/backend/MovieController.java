@@ -1,7 +1,9 @@
 package org.example.backend;
 
 import lombok.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -30,4 +32,13 @@ public class MovieController {
     public void deleteMovieById(@PathVariable String id) {
         movieService.deleteMovie(id);
     }
+
+    @PutMapping(path = {"{id}"})
+    Movie updateMovieID(@PathVariable String id, @RequestBody Movie movie) {
+        if (!movie.id().equals(id)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The id in the url does not match the request body's id");
+        }
+        return movieService.updateMovie(movie);
+    }
 }
+

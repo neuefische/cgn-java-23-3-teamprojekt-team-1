@@ -62,4 +62,18 @@ class MovieServiceTest {
         //THEN
         verify(movieRepository, times(1)).deleteById("15432-3215");
     }
+    @Test
+    void updateMovie_returnTheUpdatedMovieObject() {
+        // GIVEN
+        Movie existingMovie = new Movie("15432-3215", "Katze", "Alex");
+        Movie expected = new Movie("15432-3215", "Katzengejammer", "Luna");
+
+        // WHEN
+        when(movieRepository.save(any(Movie.class))).thenReturn(existingMovie);
+        when(movieRepository.save(any(Movie.class))).thenReturn(expected);
+        Movie actual = movieService.updateMovie(new Movie("15432-3215", "Katzengejammer", "Luna"));
+        // THEN
+        verify(movieRepository).save(expected);
+        assertEquals(expected, actual);
+    }
 }
