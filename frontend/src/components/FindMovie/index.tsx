@@ -1,8 +1,6 @@
 import axios from "axios";
 import { FindMovieByIdProps } from "../../resources/types.tsx";
 import "../../resources/global.css";
-import "./index.css";
-
 
 import { ChangeEvent, FormEvent, useState } from "react";
 
@@ -39,7 +37,6 @@ export default function FindMovie({ onFindMovie }: FindMovieByIdProps) {
                     />
                     <button type="submit">Find</button>
                 </div>
-
             </form>
         </section></>
     );

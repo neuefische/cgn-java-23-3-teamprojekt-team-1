@@ -1,8 +1,7 @@
 import { useState } from "react";
 import {Movie, UpdateMovieProps} from "../../resources/types.tsx";
-// import "../../resources/global.css";
+import "../../resources/global.css";
 import "./index.css";
-
 
 export default function UpdateMovie({ movie, onUpdateMovie }: UpdateMovieProps): JSX.Element {
     const [updatedTitle, setUpdatedTitle] = useState<string>(movie.title);
@@ -19,7 +18,6 @@ export default function UpdateMovie({ movie, onUpdateMovie }: UpdateMovieProps):
 
     return (
         <div className="update-form">
-            {/*<h3>Update Movie</h3>*/}
             <label>
                 Edit Title:
                 <input
@@ -36,7 +34,7 @@ export default function UpdateMovie({ movie, onUpdateMovie }: UpdateMovieProps):
                     onChange={(e) => setUpdatedAuthor(e.target.value)}
                 />
             </label>
-            <button className="update-button"onClick={handleUpdateClick}>Update</button>
+            <button className="update-button" onClick={handleUpdateClick}>Update</button>
         </div>
     );
 }
